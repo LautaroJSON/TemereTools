@@ -1,2 +1,7 @@
-# Folder Node Modules
-node_modules
+# GIT IGNORE 0.1.0
+
+# dependencies
+/node_modules
+
+# production
+/build
