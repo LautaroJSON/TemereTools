@@ -1,11 +1,15 @@
 {
     "env": {
         "browser": true,
+        
         "es2021": true
     },
     "extends": [
         "plugin:react/recommended",
-        "standard-with-typescript"
+        "standard-with-typescript",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:prettier/recommended"
     ],
     "overrides": [
     ],
@@ -16,8 +20,14 @@
     },
     "plugins": [
         "react",
+        "prettier",
+        "jsx-a11y",
+        "react-hooks",
         "@typescript-eslint"
     ],
     "rules": {
+        "prettier/prettier": "error",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/explicit-function-return-type": "off"
     }
 }
