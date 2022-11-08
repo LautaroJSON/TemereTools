@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.SidebarDiv {
+  display: flex;
+  align-items: center;
+  margin: 22px;
+}
