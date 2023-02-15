@@ -2,42 +2,50 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { IconContainer, NavbarContainer, NavItem } from "./styles";
 import { Tooltip } from "../tooltip";
+import { useRouter } from "next/router";
 
 interface ISectionNavbar {
   tooltip: string;
-  url: string;
+  urlImg: string;
+
   alt: string;
 }
 const SECTIONS_NAVBAR: Array<ISectionNavbar> = [
   {
     tooltip: "Sorteo",
-    url: "/icons/sorteo.png",
+    urlImg: "/icons/sorteo.png",
     alt: "img-sorteo",
   },
   {
     tooltip: "Porcentaje",
-    url: "/icons/percentage.png",
+    urlImg: "/icons/percentage.png",
     alt: "img-sorteo",
   },
   {
     tooltip: "Todo-list",
-    url: "/icons/todolist.png",
+    urlImg: "/icons/todolist.png",
     alt: "img-sorteo",
   },
   {
     tooltip: "Compertir la cuenta",
-    url: "/icons/compartir.png",
+    urlImg: "/icons/compartir.png",
     alt: "img-sorteo",
   },
   {
     tooltip: "Temporizador",
-    url: "/icons/tiempo.png",
+    urlImg: "/icons/tiempo.png",
     alt: "img-sorteo",
   },
 ];
 
 const Navbar = () => {
   const [itemSelected, setItemSelected] = useState<string>();
+  const router = useRouter();
+
+  const handleOnClickNav = (section: string) => {
+    setItemSelected(section);
+    router.push(`/${section.toLowerCase()}`);
+  };
 
   return (
     <NavbarContainer>
@@ -46,12 +54,12 @@ const Navbar = () => {
           <Tooltip text={sec.tooltip} key={sec.tooltip}>
             <NavItem
               onClick={() => {
-                setItemSelected(sec.tooltip);
+                handleOnClickNav(sec.tooltip);
               }}
               selected={sec.tooltip === itemSelected}
             >
               <IconContainer>
-                <Image src={sec.url} alt={sec.alt} fill />
+                <Image src={sec.urlImg} alt={sec.alt} fill />
               </IconContainer>
             </NavItem>
           </Tooltip>

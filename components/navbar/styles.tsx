@@ -4,11 +4,13 @@ export const NavbarContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 90px;
+  width: 90px;
+  height: 370px;
 
   gap: 12px;
   background-color: var(--bg-grey-color);
   padding: 1rem;
+  box-sizing: border-box;
   border-radius: 26px;
 `;
 
@@ -23,7 +25,7 @@ export const NavItem = styled.div<{ selected: boolean }>`
   padding: 0.8rem;
   transition: background-color 0.3s ease-in-out;
   transition: border-radius 0.3s ease-in-out;
-  transition: padding 0.3s;
+  transition: all 0.3s;
 
   cursor: pointer;
 
@@ -40,7 +42,7 @@ export const NavItem = styled.div<{ selected: boolean }>`
         `
       : css`
           :hover {
-            padding: 1rem;
+            // padding: 1rem;
             border-radius: 35%;
             background-color: white;
             /* padding: 1.2rem; */
