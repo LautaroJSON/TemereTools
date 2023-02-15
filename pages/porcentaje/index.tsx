@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Porcentaje = () => {
-  return <div>hola</div>;
+const Porcentaje = () => {
+  return <div>Porcentaje</div>;
 };
+
+export default Porcentaje;
